@@ -1,10 +1,10 @@
 name: Build Linux portable
 on:
   workflow_dispatch:
-  pull_request:
-  release:
-    types:
-      - created
+  # pull_request:
+  # release:
+  #   types:
+  #     - created
 jobs:
   build_and_preview:
     runs-on: ubuntu-latest

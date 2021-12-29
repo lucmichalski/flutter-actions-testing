@@ -1,10 +1,10 @@
 name: Build Win32
 on:
   workflow_dispatch:
-  pull_request:
-  release:
-    types:
-      - created
+  # pull_request:
+  # release:
+  #   types:
+  #     - created
 jobs:
   build_and_preview:
     runs-on: windows-latest
@@ -43,7 +43,7 @@ jobs:
           dart compile exe -o .\bin\nyrna_toggle_active_window.exe .\bin\toggle_active_window.dart
           editbin.exe /subsystem:windows .\bin\nyrna_toggle_active_window.exe
           xcopy .\bin\nyrna_toggle_active_window.exe ..\..\build\Nyrna
-          
+
           Ahk2Exe.exe /in .\hotkey\toggle_active_hotkey.ahk /out ..\..\build\Nyrna\toggle_active_hotkey.exe
           cd ..\..
       - name: Add README
